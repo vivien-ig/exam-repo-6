@@ -1,33 +1,35 @@
+
 variable "aws_region" {
+  description = "AWS region for deployment"
   type        = string
-  description = "AWS region to deploy into"
   default     = "ca-central-1"
 }
 
-variable "ami_id" {
+variable "project_name" {
+  description = "Name prefix for resources"
   type        = string
-  description = "AMI ID to use for the instance"
-  default     = "ami-03814457ed908d8f6"
+  default     = "terraform-ec2-exam"
 }
 
 variable "instance_type" {
+  description = "EC2 instance type"
   type        = string
   default     = "t2.micro"
 }
 
 variable "key_name" {
+  description = "Name of an existing EC2 key pair"
   type        = string
-  description = "EC2 Key pair name"
-  default = "metrocanadakp"
-}
-
-variable "environment" {
-  type    = string
-  default = "dev"
 }
 
 variable "vpc_id" {
+  description = "ID of the existing VPC"
   type        = string
-  description = "VPC ID to launch resources into"
-  default = "vpc-0d5d4b0f4e6f895ad"
 }
+
+variable "subnet_id" {
+  description = "ID of a subnet in the selected VPC"
+  type        = string
+}
+
+

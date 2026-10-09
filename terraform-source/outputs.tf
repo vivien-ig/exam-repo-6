@@ -1,7 +1,20 @@
+
 output "instance_id" {
-  value = aws_instance.example.id
+  description = "ID of the EC2 instance"
+  value       = aws_instance.web.id
 }
 
-output "instance_public_ip" {
-  value = aws_instance.example.public_ip
+output "public_ip" {
+  description = "Public IP address of the EC2 instance"
+  value       = aws_instance.web.public_ip
+}
+
+output "ami_id" {
+  description = "Amazon Linux 2 AMI selected by Terraform"
+  value       = data.aws_ami.amazon_linux_2.id
+}
+
+output "security_group_id" {
+  description = "ID of the attached security group"
+  value       = aws_security_group.ec2_sg.id
 }
